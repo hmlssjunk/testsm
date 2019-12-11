@@ -1,0 +1,10 @@
+{
+    "name": "user/feedback.local",
+    "authors": [
+        {
+            "name": "Kirin Ivan",
+            "email": "tsuki777@mail.ru"
+        }
+    ],
+    "require": {}
+}
