@@ -2,10 +2,14 @@
 
 namespace Controllers\Main;
 
-class Main
+use Views\View;
+
+class Controller
 {
-    public function __construct ()
+    public function primary()
     {
-        echo 'Main controller';
+        $view = new View();
+        $html = $view->render('tpl/main.tpl');
+        echo $html;
     }
 }
