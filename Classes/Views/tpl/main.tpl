@@ -25,7 +25,6 @@
                 message: document.getElementById('message').value
             };
         let json = JSON.stringify(info);
-        alert (json);
 
         fetch('/Main/sendMessage/', {
             method: 'POST',
@@ -34,20 +33,17 @@
             }).then(response => response.json())
             .then(function(result){
         let jo = result;
-        if(jo['status'] != 'ok'){
-        alert(jo['e_m']);
-        }
         if(jo['status'] == 'ok'){
-        document.getElementById('name').value = '';
-        document.getElementById('mail').value = '';
-        document.getElementById('message').value = '';
-        refresh();
+            document.getElementById('name').value = '';
+            document.getElementById('mail').value = '';
+            document.getElementById('message').value = '';
+            refresh();
         }
-        });
+    });
 }
     function refresh()
     {
-        document.getElementById('messageslist').html = '';
+        document.getElementById('messageslist').innerHTML = '';
         fetch('/Main/getMessage', {
             method: 'POST',
             headers: {'Content-Type': 'application/json;charset=utf-8'}

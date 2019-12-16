@@ -6,5 +6,7 @@
             "email": "tsuki777@mail.ru"
         }
     ],
-    "require": {}
+    "require": {
+        "justinrainbow/json-schema": "^5.2"
+    }
 }
