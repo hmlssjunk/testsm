@@ -50,6 +50,7 @@
             }).then(response => response.json())
             .then(result =>
             {
+            console.log(result);
               result.forEach(element=>
                 {
                     let html = '';

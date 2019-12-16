@@ -50,12 +50,14 @@ class Controller
             $resultjson['status'] = $result; 
             die(json_encode($resultjson));
         } else {
-            echo "JSON does not validate. Violations:\n";
-            foreach ($validator->getErrors() as $error) {
-            echo sprintf("[%s] %s\n",$error['property'], $error['message']);
-            }
+            //echo "JSON does not validate. Violations:\n";
+            //foreach ($validator->getErrors() as $error) {
+              //  echo sprintf("[%s] %s\n",$error['property'], $error['message']);
+            //}
+            $resultjson[] = $validator->getErrors();
+            die(json_encode($resultjson));
         }
-}
+    }
 
     public function getMessage()
     {
